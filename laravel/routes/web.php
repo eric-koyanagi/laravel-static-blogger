@@ -19,5 +19,10 @@ use Illuminate\Support\Facades\Route;
 // list all articles
 Route::get('/', [ArticleController::class, 'index']);
 
+// new and edit form
+Route::get('/new', [ArticleController::class, 'edit']);
 Route::get('/edit/{id}', [ArticleController::class, 'edit']);
+
+// save article route
+Route::post('/new', [ArticleController::class, 'save']);
 Route::post('/edit/{id}', [ArticleController::class, 'save']);
