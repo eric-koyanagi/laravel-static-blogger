@@ -1,5 +1,8 @@
 <?php
 
+use \App\Http\Controllers;
+//use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// list all articles
+Route::get('/', [ArticleController::class, 'index']);
+
+Route::get('/edit/{id}', [ArticleController::class, 'edit']);
+Route::post('/edit/{id}', [ArticleController::class, 'save']);
