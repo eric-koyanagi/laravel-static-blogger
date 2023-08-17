@@ -6,7 +6,7 @@
         <h2>Ordered by most recent first</h2>
         <ul class="main-article-list">
             @foreach ($articles as $article)
-                {{ $article }}
+                <li><a href="/edit/{{$article->id}}">{{ $article->title }}</a></li>
             @endforeach
         </ul>
     </section>

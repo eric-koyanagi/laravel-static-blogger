@@ -24,5 +24,4 @@ Route::get('/new', [ArticleController::class, 'edit']);
 Route::get('/edit/{id}', [ArticleController::class, 'edit']);
 
 // save article route
-Route::post('/new', [ArticleController::class, 'save']);
-Route::post('/edit/{id}', [ArticleController::class, 'save']);
+Route::post('/edit', [ArticleController::class, 'save']);
