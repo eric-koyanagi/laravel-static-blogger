@@ -10,4 +10,9 @@ class StaticPageBuilder
     {
         return view('article', compact('article'))->render();
     }
+
+    public function rebuildArticleIndex()
+    {
+
+    }
 }

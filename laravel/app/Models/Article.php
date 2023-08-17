@@ -7,6 +7,8 @@ use App\Services\StaticPageBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Illuminate\Support\Str;
+
 class Article extends Model
 {
     use HasFactory;
@@ -23,7 +25,12 @@ class Article extends Model
 
         // combines all attributes and the site's header/footer templates into a "blog" page
         $this->markup = $builder->build($this);
-        //$awsUploader->publish(Str::slug($this->title, '-'), $this->markup);
+
+        // pushes the static page to AWS
+        $awsUploader->publish(Str::slug($this->title, '-'), $this->markup);
+
+        // rebuilds the article index
+        $builder->rebuildArticleIndex();
 
         return $this->markup;
     }
