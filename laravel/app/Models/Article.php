@@ -13,7 +13,10 @@ class Article extends Model
 
     protected string $markup;
 
-    public function publish()
+    /**
+     * @return string The complete HTML document published to AWS
+     */
+    public function publish() : string
     {
         $builder = new StaticPageBuilder();
         $awsUploader = new AWSService();
@@ -21,5 +24,7 @@ class Article extends Model
         // combines all attributes and the site's header/footer templates into a "blog" page
         $this->markup = $builder->build($this);
         //$awsUploader->publish(Str::slug($this->title, '-'), $this->markup);
+
+        return $this->markup;
     }
 }
