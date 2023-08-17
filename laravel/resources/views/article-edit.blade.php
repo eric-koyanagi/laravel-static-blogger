@@ -19,7 +19,7 @@
 
             <div class="mb-3">
                 <label for="articleContent" class="form-label">Content</label>
-                <div class="form-control" id="articleContent">{{ $article->body }}</div>
+                <div class="form-control" id="articleContent">{!! $article->body !!}</div>
             </div>
 
             <input type="hidden" name="body" id="body" value=""/>
@@ -32,8 +32,9 @@
                 theme: 'snow'
             });
 
+            // extracts HTML from quill and inserts it into the form
             function updateBody(ev) {
-                document.getElementById("body").value = quill.getText();
+                document.getElementById("body").value = quill.root.innerHTML;
             }
 
             const form = document.getElementById("edit-form");

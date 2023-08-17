@@ -18,8 +18,10 @@ class ArticleController extends Controller
         return view('article-edit', ['id' => $id ?? 0, 'article' => $article]);
     }
 
-    public function save(Request $request, $id = null)
+    public function save(Request $request)
     {
+        $id = $request->input('id');
+
         $article = !empty($id) ? Article::find($id) : new Article;
         $article->title = $request->input('title');
         $article->author = $request->input('author');
