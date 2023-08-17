@@ -26,6 +26,7 @@ class ArticleController extends Controller
         $article->title = $request->input('title');
         $article->author = $request->input('author');
         $article->body = $request->input('body');
+        $article->setSlug();
         $article->save();
         return $article->publish();
     }

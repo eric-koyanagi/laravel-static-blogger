@@ -15,6 +15,12 @@ class Article extends Model
 
     protected string $markup;
 
+    // Create the slug attribute based on the title
+    public function setSlug()
+    {
+        $this->slug = Str::slug($this->title, '-').'.html';
+    }
+
     /**
      * @return string The complete HTML document published to AWS
      */
@@ -26,11 +32,9 @@ class Article extends Model
         // combines all attributes and the site's header/footer templates into a "blog" page
         $this->markup = $builder->build($this);
 
-        // pushes the static page to AWS
-        $awsUploader->publish(Str::slug($this->title, '-'), $this->markup);
-
-        // rebuilds the article index
-        $builder->rebuildArticleIndex();
+        // publishes (uploads) the article, then rebuilds the article index page
+        $awsUploader->publish($this->slug, $this->markup);
+        $awsUploader->publish('index.html', $builder->buildArticleIndex());
 
         return $this->markup;
     }
