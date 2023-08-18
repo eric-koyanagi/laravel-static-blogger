@@ -10,3 +10,8 @@ Additionally, the app generates a simple "index" for articles that allows search
 This isn't a robust, full-featured system, but it allows someone to host basic content for very little money (and without the overhead, security flaws, and annoyance of spinning up Wordpress or other platforms). 
 
 Also, this application is meant to be a demonstration of my skills as a LAMP developer, specifically for the laravel platform.
+
+# More about static hosting on S3
+To serve static content on S3 (via https), see this article: 
+https://repost.aws/knowledge-center/cloudfront-https-requests-s3 
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/CNAMEs.html#CreatingCNAME
