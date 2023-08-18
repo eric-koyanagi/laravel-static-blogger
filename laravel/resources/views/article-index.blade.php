@@ -14,7 +14,7 @@
         </p>
         <p>
             More than that, I like writing. I like recording my experiences because it's oh-so-easy to forget details that
-            might come in handy later in my career. 
+            might come in handy later in my career.
         </p>
         <p>
             Although I do love paying recurring fees just to host some text, this blog was engineered to be very fast and very
