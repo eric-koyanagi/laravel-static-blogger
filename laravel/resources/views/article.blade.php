@@ -3,6 +3,7 @@
         {{ $article->title }}
     </x-slot>
     <header>
+        <a href="./index.html">&laquo; Article List</a>
         <h1>{{ $article->title  }}</h1>
     </header>
     <section class="contents container-fluid">

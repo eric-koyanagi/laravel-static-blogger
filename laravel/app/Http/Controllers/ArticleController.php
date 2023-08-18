@@ -20,6 +20,12 @@ class ArticleController extends Controller
 
     public function save(Request $request)
     {
+        $request->validate([
+            'title' => ['required', 'max:255'],
+            'author' => ['required'],
+            'body' => ['required'],
+        ]);
+
         $id = $request->input('id');
 
         $article = !empty($id) ? Article::find($id) : new Article;
