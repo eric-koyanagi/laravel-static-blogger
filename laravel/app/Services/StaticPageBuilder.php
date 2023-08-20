@@ -13,6 +13,6 @@ class StaticPageBuilder
 
     public function buildArticleIndex()
     {
-        return view('article-index', ['articles' => Article::all()])->render();
+        return view('article-index', ['articles' => Article::orderByDesc('created_at')->get()])->render();
     }
 }

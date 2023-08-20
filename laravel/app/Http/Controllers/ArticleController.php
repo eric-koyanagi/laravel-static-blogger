@@ -9,13 +9,19 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        return view('article-list', ['articles' => Article::all()]);
+        return view('article-list', ['articles' => Article::orderByDesc('created_at')->get()]);
     }
 
     public function edit(Request $request, $id = null)
     {
         $article = !empty($id) ? Article::find($id) : new Article;
-        return view('article-edit', ['id' => $id ?? 0, 'article' => $article]);
+        return view('article-edit',
+            [
+                'id' => $id ?? 0,
+                'article' => $article,
+                'articles' => Article::all()
+            ]
+        );
     }
 
     public function save(Request $request)
@@ -32,6 +38,8 @@ class ArticleController extends Controller
         $article->title = $request->input('title');
         $article->author = $request->input('author');
         $article->body = $request->input('body');
+        $article->next = $request->input('next');
+        $article->previous = $request->input('previous');
         $article->setSlug();
         $article->save();
         return $article->publish();

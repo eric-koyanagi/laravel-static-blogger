@@ -32,6 +32,20 @@
                 <div class="form-control" id="articleContent">{!! old('body') ?? $article->body !!}</div>
             </div>
 
+            <div class="mb-3">
+                <label for="articleContent" class="form-label">Next (optional)</label>
+                <div class="form-control" id="articleContent">
+                    <x:select name="next" selected="{!! old('next') ?? $article->next !!}" :options="$articles"/>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="articleContent" class="form-label">Previous (optional)</label>
+                <div class="form-control" id="articleContent">
+                    <x:select name="previous" selected="{!! old('next') ?? $article->previous !!}" :options="$articles"/>
+                </div>
+            </div>
+
             <input type="hidden" name="body" id="body" value=""/>
             <button type="submit" class="btn btn-primary">Submit</button>
 
