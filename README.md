@@ -1,5 +1,5 @@
 # laravel-static-blogger
-A laravel content creator that creates static files from database-driven content
+A laravel simple article creator that creates static files from database-driven content, allowing for hosting a very cheap blog or documentation repository.
 
 # What is this for?
 This project allows a tech-savvy author to host simple articles or blog posts without the overhead of a hosted blog. Using a very simple UI, this allows a user to create one or more articles. These are converted to static files (complete with headers, footers, auto-generated links, images, and content) and uploaded to Amazon's S3.
