@@ -1,6 +1,6 @@
 <x-article-layout>
     <x-slot:title>
-        Discussing Development, Tech, and Nerdish Shit | EricKoyanagi.com
+        Discussing Development, Tech, and Nerd Stuff! | EricKoyanagi.com
     </x-slot>
     <header>
         <h1>Discussing Development, Tech, and Nerdish Shit</h1>
@@ -8,13 +8,14 @@
     <section class="contents container-fluid">
         <h2>Yo. I'm Eric!</h2>
         <p>
-            This blog is where I write various articles and guides. Why? Because I like being employed, and my
-            resume can only communicate a slice of my experience and perspective. I know it's not super likely that
-            an employer reads every line of my messy blog...but at the very least, maybe I'll get points for effort?
+            This blog is where I write various articles and guides. Why? Because I want to show my skills and thought process
+            beyond what a simple CV can communicate. Also, I find writing helps me cement existing or new skills. I also like being
+            employed, and hope that someday one of these articles can help bolster my application.
         </p>
         <p>
             More than that, I like writing. I like recording my experiences because it's oh-so-easy to forget details that
-            might come in handy later in my career.
+            might come in handy later in my career. With so many copy/paste type articles trying to game Google, I hope that
+            my ramblings can be useful to someone out there.
         </p>
         <p>
             Although I do love paying recurring fees just to host some text, this blog was engineered to be very fast and very
