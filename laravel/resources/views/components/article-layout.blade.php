@@ -15,6 +15,8 @@
     <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <style>
         main { font-size: 2vh; position: relative; }
         header { background: #eee; padding: 10px; text-align: center; margin-bottom: 20px; }
