@@ -30,5 +30,24 @@
                 </li>
             @endforeach
         </ul>
+
+        <h2>About hiring me...</h2>
+        <p>
+            I prefer full time or contract work, but I do my best no matter what type of client. With extensive experience
+            working with all sizes of startups, I aim to deliver high quality, practical, and profitable products.
+        </p>
+        <p>
+            You can view my resume, portfolio, and contact info easily <a href="https://erickoyanagi.com">here</a>.
+        </p>
+        <p>
+            I'm also available through these gig-style sites, but I am not going to pretend to have a lot of experience with
+            these platforms. I don't know (or care to know) how to "game" these systems for maximum profit...call me old-fashioned,
+            but I just want to do quality work and be paid fairly for it.
+        </p>
+        <p>
+            <a href="https://www.fiverr.com/erickoyanagi">&raquo; My Fiverr</a><br/>
+            <a href="https://www.upwork.com/freelancers/~01879bee1d3000411f">&raquo; My Upwork</a><br/>
+        </p>
+
     </section>
 </x-article-layout>

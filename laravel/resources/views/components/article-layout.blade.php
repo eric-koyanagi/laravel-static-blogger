@@ -16,13 +16,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
     <style>
-        main { font-size: 2vh; }
-        header { background: #eee; padding: 10px; text-align: center; margin-bottom: 10px; }
+        main { font-size: 2vh; position: relative; }
+        header { background: #eee; padding: 10px; text-align: center; margin-bottom: 20px; }
         h1 { font-size: 4vh; }
-        h2 { font-size: 3vh; }
+        h2 { font-size: 3vh; margin-bottom:15px; }
+        article { min-height: 100vh; }
         article .info { font-style: italic; }
         article .contents { padding: 0 25px; max-width:1200px; }
         .ql-syntax { background: #eee; padding: 5px; }
+        .footer-nav {
+            background: #333;
+            color: #fff;
+            padding: 25px;
+            text-align: center;
+            margin-top: 35px;
+        }
+        .footer-nav a { color:#fff; }
     </style>
 </head>
 <body>
