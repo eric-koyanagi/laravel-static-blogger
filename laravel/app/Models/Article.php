@@ -14,6 +14,32 @@ class Article extends Model
     use HasFactory;
 
     protected string $markup;
+    protected Article $previousArticle;
+    protected Article $nextArticle;
+
+    /**
+     * Loads the previous article if not already loaded and returns it
+     */
+    public function getPrevious()
+    {
+        if (empty($this->previousArticle) && !empty($this->previous)) {
+            $this->previousArticle = Article::find($this->previous);
+        }
+
+        return $this->previousArticle ?? null;
+    }
+
+    /**
+     * Loads the next article if not already loaded and returns it
+     */
+    public function getNext()
+    {
+        if (empty($this->nextArticle) && !empty($this->next)) {
+            $this->nextArticle = Article::find($this->next);
+        }
+
+        return $this->nextArticle ?? null;
+    }
 
     // Create the slug attribute based on the title
     public function setSlug()

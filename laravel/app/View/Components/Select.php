@@ -13,7 +13,7 @@ class Select extends Component
      */
     public function __construct(public string $name, public string $selected, public $options)
     {
-        //
+        // These variables are passed to the view automatically
     }
 
     /**

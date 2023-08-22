@@ -14,4 +14,17 @@
         </section>
         {!! $article->body !!}
     </section>
+    <section class="footer-links contents container-fluid">
+        @if (!empty($article->getPrevious()))
+            <a href="/{{$article->getPrevious()->slug }}" alt="Previous Article: {{ $article->getPrevious()->title }}">
+                Previous: {{ $article->getPrevious()->title }}
+            </a>
+        @endif
+
+        @if (!empty($article->getNext()))
+            <a href="/{{$article->getNext()->slug }}" alt="Previous Article: {{ $article->getNext()->title }}">
+                Next: {{ $article->getNext()->title }}
+            </a>
+        @endif
+    </section>
 </x-article-layout>
