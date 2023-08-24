@@ -50,11 +50,8 @@ class Article extends Model
     /**
      * @return string The complete HTML document published to AWS
      */
-    public function publish() : string
+    public function publish($awsUploader, $builder) : string
     {
-        $builder = new StaticPageBuilder();
-        $awsUploader = new AWSService();
-
         // combines all attributes and the site's header/footer templates into a "blog" page
         $this->markup = $builder->build($this);
 
