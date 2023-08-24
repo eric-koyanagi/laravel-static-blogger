@@ -1,0 +1,1 @@
+<input name="{{ $name }}" id="{{ $id }}" type="checkbox" @if ($checked) checked @endif/>

@@ -51,8 +51,10 @@ class ArticleController extends Controller
         $article->body = $request->input('body');
         $article->next = $request->input('next');
         $article->previous = $request->input('previous');
+        $article->published = !empty($request->input('published'));
         $article->setSlug();
         $article->save();
-        return $article->publish($this->awsService, $this->pageBuilder);
+
+        return $article->publish($this->awsService, $this->pageBuilder, $article->published);
     }
 }

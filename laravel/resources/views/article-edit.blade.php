@@ -18,6 +18,11 @@
             @endif
 
             <div class="mb-3">
+                <label for="published" class="form-label" for="previous">Publish Changes:</label>
+                <x:checkbox id="published" name="published" checked="{{ old('published') ?? $article->published ?? false }}"/>
+            </div>
+
+            <div class="mb-3">
                 <label for="articleTitle" class="form-label">Article Title</label>
                 <input type="text" name="title" class="form-control" id="articleTitle" value="{{ old('title') ?? $article->title }}">
             </div>

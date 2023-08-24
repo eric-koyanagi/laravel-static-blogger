@@ -50,14 +50,16 @@ class Article extends Model
     /**
      * @return string The complete HTML document published to AWS
      */
-    public function publish($awsUploader, $builder) : string
+    public function publish($awsUploader, $builder, $pushLive = true) : string
     {
         // combines all attributes and the site's header/footer templates into a "blog" page
         $this->markup = $builder->build($this);
 
         // publishes (uploads) the article, then rebuilds the article index page
-        $awsUploader->publish($this->slug, $this->markup);
-        $awsUploader->publish('index.html', $builder->buildArticleIndex());
+        if ($pushLive) {
+            $awsUploader->publish($this->slug, $this->markup);
+            $awsUploader->publish('index.html', $builder->buildArticleIndex());
+        }
 
         return $this->markup;
     }
