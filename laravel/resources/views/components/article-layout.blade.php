@@ -33,6 +33,7 @@
             text-align: center;
             margin-top: 35px;
         }
+        a { color:#00c4ff; }
         .footer-nav a { color:#fff; }
     </style>
 </head>

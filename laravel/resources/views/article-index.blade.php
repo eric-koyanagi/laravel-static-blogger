@@ -25,10 +25,19 @@
         <h2>All Articles</h2>
         <ul class="main-article-list">
             @foreach ($articles as $article)
+                @if ($article->published)
                 <li>
-                    <a href="./{{$article->slug}}" alt="{{$article->title}}">{{ $article->title }}</a>
-
+                    <article>
+                        <a href="./{{$article->slug}}" alt="{{$article->title}}">{{ $article->title }}</a>
+                        <p>
+                            Posted on
+                            <time datetime="{{ $article->updated_at }}">
+                                {{ $article->updated_at->format('m/d/Y') }}
+                            </time>
+                        </p>
+                    </article>
                 </li>
+                @endif
             @endforeach
         </ul>
 
@@ -52,3 +61,18 @@
 
     </section>
 </x-article-layout>
+<style>
+    .main-article-list { list-style: none }
+    .main-article-list li {
+        background: #e2e2e2;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 8px;
+    }
+    .main-article-list li article {
+        min-height: auto;
+    }
+    .main-article-list li a {
+        text-decoration: none;
+    }
+</style>
