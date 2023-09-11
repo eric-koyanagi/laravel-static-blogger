@@ -20,7 +20,9 @@ class ArticleController extends Controller
 
     public function index()
     {
-        return view('article-list', ['articles' => Article::orderByDesc('created_at')->get()]);
+        return view('article-list', [
+            'articles' => Article::orderByDesc('created_at')->get()
+        ]);
     }
 
     public function edit(Request $request, $id = null)

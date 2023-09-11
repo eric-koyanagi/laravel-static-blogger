@@ -2,6 +2,9 @@
     <x-slot:title>
         {{ $article->title }}
     </x-slot>
+    <x-slot:css>
+        {{ $baked_css ?? "" }}
+    </x-slot:css>
     <header>
         <a href="./index.html">&laquo; Article List</a>
         <h1>{{ $article->title  }}</h1>
@@ -9,7 +12,7 @@
     <section class="contents container-fluid">
         <section class="info">
             Posted on
-            <time datetime="{{ $article->updated_at }}">{{ $article->updated_at->format('m/d/Y') }}</time>
+            <time datetime="{{ $article->created_at }}">{{ $article->created_at->format('m/d/Y') }}</time>
             <address>By {{ $article->author }}</address>
         </section>
         {!! $article->body !!}

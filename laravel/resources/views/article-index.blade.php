@@ -2,18 +2,38 @@
     <x-slot:title>
         Discussing Development, Tech, and Nerd Stuff! | EricKoyanagi.com
     </x-slot>
+    <x-slot:css>
+        .main-article-list { list-style: none }
+        .main-article-list li {
+            background: #f4f9fa;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+        }
+        .main-article-list li article {
+            min-height: auto;
+        }
+        .main-article-list li article p {
+            margin-bottom: 0;
+        }
+        .main-article-list li article time {
+            font-style: italic;
+        }
+        .main-article-list li a {
+            text-decoration: none;
+        }
+        {{ $baked_css }}
+    </x-slot:css>
     <header>
         <h1>Discussing Development, Tech, and Nerdish Shit</h1>
     </header>
     <section class="contents container-fluid">
         <h2>Yo. I'm Eric!</h2>
         <p>
-            This blog is where I write various articles and guides. Why? Because I want to show my skills and thought process
-            beyond what a simple CV can communicate. Also, I find writing helps me cement existing or new skills. I also like being
-            employed, and hope that someday one of these articles can help bolster my application.
+            This blog is where I write various articles and guides about technology, programming, and whatever else I want.
         </p>
         <p>
-            More than that, I like writing. I like recording my experiences because it's oh-so-easy to forget details that
+            I like writing about my experiences because it's oh-so-easy to forget details that
             might come in handy later in my career. With so many copy/paste type articles trying to game Google, I hope that
             my ramblings can be useful to someone out there.
         </p>
@@ -31,8 +51,8 @@
                         <a href="./{{$article->slug}}" alt="{{$article->title}}">{{ $article->title }}</a>
                         <p>
                             Posted on
-                            <time datetime="{{ $article->updated_at }}">
-                                {{ $article->updated_at->format('m/d/Y') }}
+                            <time datetime="{{ $article->created_at }}">
+                                {{ $article->created_at->format('m/d/Y') }}
                             </time>
                         </p>
                     </article>
@@ -61,18 +81,3 @@
 
     </section>
 </x-article-layout>
-<style>
-    .main-article-list { list-style: none }
-    .main-article-list li {
-        background: #e2e2e2;
-        padding: 10px;
-        border-radius: 10px;
-        margin-bottom: 8px;
-    }
-    .main-article-list li article {
-        min-height: auto;
-    }
-    .main-article-list li a {
-        text-decoration: none;
-    }
-</style>
