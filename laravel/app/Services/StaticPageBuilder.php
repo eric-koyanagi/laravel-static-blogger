@@ -28,7 +28,6 @@ class StaticPageBuilder
     // returns minified CSS for use inline in the article layout
     protected function getBakedCSS(): string
     {
-        // Using a Package
         $sourcePath = public_path('css/article-layout.css');
         $minifier = new Minify\CSS($sourcePath);
         return $minifier->minify();

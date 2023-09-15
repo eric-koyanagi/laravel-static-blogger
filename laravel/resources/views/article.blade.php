@@ -16,6 +16,7 @@
             <address>By {{ $article->author }}</address>
         </section>
         {!! $article->body !!}
+
     </section>
     <section class="footer-links contents container-fluid">
         @if (!empty($article->getPrevious()))

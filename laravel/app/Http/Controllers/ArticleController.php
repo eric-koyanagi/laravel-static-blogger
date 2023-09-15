@@ -9,8 +9,8 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
-    protected $awsService;
-    protected $pageBuilder;
+    protected AWSService $awsService;
+    protected StaticPageBuilder $pageBuilder;
 
     public function __construct(AWSService $service, StaticPageBuilder $builder)
     {
@@ -37,7 +37,7 @@ class ArticleController extends Controller
         );
     }
 
-    public function save(Request $request)
+    public function save(Request $request): string
     {
         $request->validate([
             'title' => ['required', 'max:255'],
