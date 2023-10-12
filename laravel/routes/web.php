@@ -25,3 +25,4 @@ Route::get('/edit/{id}', [ArticleController::class, 'edit']);
 
 // save article route
 Route::post('/edit', [ArticleController::class, 'save']);
+Route::post('/delete', [ArticleController::class, 'delete']);

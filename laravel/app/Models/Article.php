@@ -63,4 +63,9 @@ class Article extends Model
 
         return $this->markup;
     }
+
+    public function unpublish($awsUploader, $builder)
+    {
+        $awsUploader->unpublish($this->slug);
+    }
 }

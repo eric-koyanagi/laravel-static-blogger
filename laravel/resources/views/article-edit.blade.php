@@ -55,6 +55,17 @@
             <button type="submit" class="btn btn-primary">Submit</button>
 
         </form>
+
+        <hr/>
+
+        <form method="post" action="/delete/" id="delete-form" enctype="multipart/form-data">
+            @csrf
+            <input type="hidden" name="id" value="{{$article->id}}"/>
+
+            <input type="checkbox" name="confirm-delete" id="confirm-delete"/> Confirm Delete <br/>
+            <button type="submit" class="btn btn-primary">Delete this Article</button>
+        </form>
+
     </section>
     <script>
             var toolbarOptions = [
@@ -89,7 +100,20 @@
                 document.getElementById("body").value = quill.root.innerHTML;
             }
 
+            function verifyDeleteCheck(ev) {
+                ev.preventDefault();
+                if (document.getElementById("confirm-delete").checked) {
+                    document.getElementById("delete-form").submit();
+                    return true;
+                }
+
+                return false;
+            }
+
             const form = document.getElementById("edit-form");
             form.addEventListener("submit", updateBody);
+
+            const deleteForm = document.getElementById("delete-form");
+            deleteForm.addEventListener("submit", verifyDeleteCheck);
     </script>
 </x-layout>

@@ -37,6 +37,15 @@ class ArticleController extends Controller
         );
     }
 
+    public function delete(Request $request): void
+    {
+        $id = $request->input('id');
+        $article = Article::find($id);
+        $article->unpublish($this->awsService, $this->pageBuilder);
+        $article->delete();
+        $this->awsService->publish('index.html', $this->pageBuilder->buildArticleIndex());
+    }
+
     public function save(Request $request): string
     {
         $request->validate([
